@@ -11,7 +11,258 @@
 	
 	<body>
 		
-		
+		<!-- Encabezado (header) -->
+	<div class="container bg-white">
+		<header class="py-3 mb-4 border-bottom">
+			<div class="container">
+				<div class="row d-flex justify-content-center">
+					<div class="col-6 col-xl-2 d-flex justify-content-center">
+						<a href="https://www.unju.edu.ar/"
+							class="">
+							<img data-th-src="@{/img/logoUnjuVirtual.png}"
+							class="img-fluid" alt="LogoUnjuVirtual" width="150" height="75">
+						</a>
+					</div>
+					<div class="col-6 col-xl-1 d-flex justify-content-center">
+						<a href="/indice"
+							class="">
+							<img data-th-src="@{/img/logofce.jpg}" class="img-fluid" alt="Logofce" width="75"
+							height="75">
+						</a>
+					</div>
+					<div class="col-xl-9 d-flex justify-content-center">
+						<p class="h1 fw-bold nombre">Facultad de Ciencias Económicas</p>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+
+	<!-- Barra de Navegación (nav) -->
+	<div class="container">
+		<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body"
+			data-bs-theme="dark">
+			<div class="container">
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active" aria-current="page" href="/indice">Inicio</a>
+						<a class="nav-link" href="#">Carreras</a> <a class="nav-link"
+							href="#">Noticias</a> <a class="nav-link" href="#">Acerca de</a>
+						<a class="nav-link" href="#">Contacto</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<br>
+	<div class="container">
+		<img class="img-fluid" data-th-src="@{/img/principal.png}"
+			alt="principal">
+	</div>
+	<br>
+	<!-- Sección principal (main) y barra lateral (aside) -->
+	<div class="container bg-white">
+		<div class="row">
+			<div class="col-xl-10">
+				<main>
+					<hr class="my-4 bg-brown">
+					<!-- Primer Fila de Noticias -->
+					<div class="row">
+						<!-- Primer Columna de Noticias -->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1411"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								25 de Mayo: Aniversario de la Revolución de Mayo </a> <a
+								href="https://www.fce.unju.edu.ar/node/1411"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/revolucion.jpg}" alt="revolucion">
+							</a>
+						</div>
+						<!-- Segunda Columna de Noticias -->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1410"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								La Politica Fiscal en la Argentina actual</a> <a
+								href="https://www.fce.unju.edu.ar/node/1410"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/politicaFiscal.jpeg}"
+								alt="politicaFiscal">
+							</a>
+						</div>
+					</div>
+					<!-- Segunda Fila de Noticias -->
+					<div class="row">
+						<!-- Primer Columna-->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1409"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								Seminario "ECONOMÍA POPULAR Y COMUNITARIA EN LAS POLITICAS
+								PÚBLICAS Y DE DESARROLLO"</a> <a
+								href="https://www.fce.unju.edu.ar/node/1409"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/seminario.jpeg}" alt="seminario">
+							</a>
+						</div>
+						<!-- Segunda Columna-->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1408"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								Jornada de Vacunación en la Facultad de Ciencias Económicas UNJU</a>
+							<a href="https://www.fce.unju.edu.ar/node/1408"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/vacunacion.jpg}" alt="vacunacion">
+							</a>
+						</div>
+					</div>
+					<!-- Tercer Fila de Noticias -->
+					<div class="row">
+						<!-- Primer Columna -->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1405"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								15 de Mayo: Día del Docente Universitario</a> <a
+								href="https://www.fce.unju.edu.ar/node/1405"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/diaDocente.jpg}" alt="diaDocente">
+							</a>
+						</div>
+						<!-- Segunda Columna -->
+						<div class="col-md-6">
+							<img class="img-fluid"
+								data-th-src="@{/img/noticias/encabezadoNoticia.png}"
+								alt="encabezado"> <a
+								href="https://www.fce.unju.edu.ar/node/1406"
+								class="d-block mb-3 text-decoration-none text-danger-emphasis fs-3">
+								Inscripción al taller de Inteligencia Artificial organizado por
+								la comisión de jóvenes profesionales del CPCE</a> <a
+								href="https://www.fce.unju.edu.ar/node/1406"
+								class="d-block mb-3"> <img class="img-fluid"
+								data-th-src="@{/img/noticias/IA.jpg}" alt="tallerIA">
+							</a>
+						</div>
+					</div>
+				</main>
+			</div>
+			<div class="col-4 col-xl-2 border border-black justify-content-center">
+				<aside>
+					<div class="row mb-2 bg-black">
+						<div class="p-2 fw-bold text-white text-center">SERVICIOS</div>
+					</div>
+					<!-- Primer Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/chatinstitucional"> <img
+							class="img-fluid"
+							data-th-src="@{/img/servicios/chatInstitucional.jpeg}" alt="chat">
+						</a>
+					</div>
+					<!-- Segundo Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/ingreso2024"> <img
+							class="img-fluid"
+							data-th-src="@{/img/servicios/ingreso2024.jpeg}" alt="ingreso">
+						</a>
+					</div>
+					<!-- Tercer Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/node/1325"> <img
+							class="img-fluid"
+							data-th-src="@{/img/servicios/calendario2024.jpg}"
+							alt="calendario">
+						</a>
+					</div>
+					<!-- Cuarto Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/biblotecadigitalfce"> <img
+							class="img-fluid" data-th-src="@{/img/servicios/biblioteca.jpg}"
+							alt="biblioteca">
+						</a>
+					</div>
+					<!-- Quinto Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/node/1000"> <img
+							class="img-fluid" data-th-src="@{/img/servicios/horarios.jpg}"
+							alt="horarios">
+						</a>
+					</div>
+					<!-- Sexto Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/node/801"> <img
+							class="img-fluid" data-th-src="@{/img/servicios/tramites.png}"
+							alt="tramites">
+						</a>
+					</div>
+					<!-- Septimo Servicio -->
+					<div class="row mb-3">
+						<a href="https://www.fce.unju.edu.ar/turnosbiblio"> <img
+							class="img-fluid" data-th-src="@{/img/servicios/prestamos.png}"
+							alt="prestamos">
+						</a>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+	<br>
+	<!-- Pie de Página (footer) -->
+	<div class="container">
+		<footer class="py-3 bg-dark text-light">
+			<div class="row d-flex justify-content-end">
+				<div class="col-12 col-md-4">
+					<h5 class="text-center">Contáctanos</h5>
+					<ul class="nav flex-column contact">
+						<li class="d-inline-flex align-items-center"><a
+							href="https://www.google.com/maps/place/Facultad+de+Ciencias+Econ%C3%B3micas+-+UNJu/@-24.184141,-65.304794,18z/data=!4m6!3m5!1s0x941b0f4194d7e76d:0xe12fff6b2f5c3a38!8m2!3d-24.1841411!4d-65.3047938!16s%2Fg%2F1tdd1sfb?hl=es-ES&entry=ttu"
+							target="_blank"> <i class="bi bi-globe-americas me-2"></i>Alvear
+								843 - San Salvador de Jujuy
+						</a></li>
+						<li class="d-inline-flex align-items-center"><i
+							class="bi bi-envelope me-2"></i>mentrada@fce.unju.edu.ar</li>
+						<li class="d-inline-flex align-items-center"><i
+							class="bi bi-telephone me-2"></i>0388 - 4221527</li>
+					</ul>
+				</div>
+			</div>
+			<div
+				class="d-flex flex-column flex-sm-row justify-content-between border-top">
+				<p>&copy; 2024 Dominguez, Antonio Emanuel. Derechos Reservados.</p>
+				<ul class="list-unstyled d-flex list-inline">
+					<li class="iconos-redes-sociales"><a
+						href="https://www.facebook.com/fceunju/?ref=embed_page"
+						target="_blank"> <i class="bi bi-facebook"></i>
+					</a></li>
+					<li class="iconos-redes-sociales"><a
+						href="https://www.instagram.com/fceunju/" target="_blank"> <i
+							class="bi bi-instagram"></i>
+					</a></li>
+					<li class="iconos-redes-sociales"><a
+						href="https://www.youtube.com/c/FCEUNJu1" target="_blank"> <i
+							class="bi bi-youtube"></i>
+					</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
 		
 		<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 	</body>

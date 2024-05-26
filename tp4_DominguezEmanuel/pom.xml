@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ar.edu.unju.fi</groupId>
-	<artifactId>Practica_Paginas_Web</artifactId>
+	<artifactId>tp4_DominguezEmanuel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Practica_Paginas_Web</name>
-	<description>practicas de paginas web</description>
+	<name>tp4_DominguezEmanuel</name>
+	<description>desarrollo tp4</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
