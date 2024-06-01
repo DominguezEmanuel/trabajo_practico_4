@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<!-- Metadatos -->
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	<!--<head>
+		<!-- Metadatos
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Titulo -->
+		<!-- Titulo 
 		<title>Inicio | Facultad de Ciencias Economicas</title>
-		<!-- Favicon -->
+		<!-- Favicon
 		<link rel="icon" type="image/x-icon" data-th-href="@{/img/logofce.jpg}">
 		<!-- Bootstrap -->
-		<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-		<!-- Iconos Bootstrap -->
+		<!--<link data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet">-->
+		<!-- Iconos Bootstrap
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-		<!-- Archivo CSS -->
+		<!-- Archivo CSS
 		<link rel="stylesheet" type="text/css" data-th-href="@{/css/estilos.css}">
-	</head>
+	</head>-->
 	
 	<body>
-		
-		<!-- Encabezado (header) -->
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		<!-- Encabezado (header)
 	<div class="container bg-white">
 		<header class="py-3 mb-4 border-bottom">
 			<div class="container">
@@ -43,7 +45,7 @@
 				</div>
 			</div>
 		</header>
-	</div>
+	</div>-->
 
 	<!-- Barra de Navegación (nav) -->
 	<div class="container">
@@ -231,7 +233,9 @@
 		</div>
 	</div>
 	<br>
-	<!-- Pie de Página (footer) -->
+	
+	<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+	<!-- Pie de Página (footer)
 	<div class="container">
 		<footer class="py-3 bg-dark text-light">
 			<div class="row d-flex justify-content-end">
@@ -269,7 +273,7 @@
 				</ul>
 			</div>
 		</footer>
-	</div>
+	</div>-->
 		
 		<!-- Bootstrap JavaScript -->
 		<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
