@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+	<head data-th-replace="~{/layouts/header :: head}"></head>
+	
+	<body>
+		<header data-th-replace="~{/layouts/header :: header}"></header>
+		
+		<div class="container">
+		
+			<nav data-th-replace="~{/layouts/navbar :: navbar}"></nav>
+		
+			<div class="row">
+				<div class="col col-sm-12 fondo-form">
+					<div class="row mb-5">
+						<div class="dgrid gap-2 d-md-flex justify-content-md-end mb-2">
+							<a class="btn btn-primary" data-th-href="@{/carrera/nuevo}" role="button">Agregar Carrera</a>
+						</div>
+						<table class="table table-hover table-striped">
+							<thead>
+							    <tr>
+							      <th scope="col">Código</th>
+							      <th scope="col">Nombre</th>
+							      <th scope="col">Duración</th>
+							      <th scope="col">Estado</th>
+							      <th scope="col">Opciones</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							  	<tr data-th-each="car : ${carreras}">
+							  		<td data-th-text="${car.codigo}"></td>
+							  		<td data-th-text="${car.nombre}"></td>
+							  		<td data-th-text="${car.cantidadAnios} +' años '"></td>
+							  		<td>
+							  			<span th:if="${car.estado}">Activa</span>
+							  			<span th:if="${!car.estado}">Inactiva</span>
+							  		</td>
+							  		<td>
+							  			<a class="btn btn-success" data-th-href="@{/carrera/modificar/}+${car.codigo}" role="button">Editar</a>
+							  			<a class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${car.codigo}" role="button">Eliminar</a>
+							  		</td>
+							  	</tr>
+							  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer -->
+		<footer data-th-replace="~{/layouts/footer :: footer}"></footer>
+		<!-- Bootstrap JavaScript -->
+		<script type="text/javascript" data-th-src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>
