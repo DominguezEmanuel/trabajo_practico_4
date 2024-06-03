@@ -2,11 +2,11 @@ package ar.edu.unju.fi.model;
 
 public class Materia {
 
-	private String codigo;
+	private int codigo;
 	private String nombre;
 	private String curso;
 	private byte cantidadHoras;
-	private Modalidad modalidad;
+	private String modalidad;
 	private Docente docente;
 	private Carrera carrera;
 	
@@ -14,7 +14,7 @@ public class Materia {
 		
 	}
 
-	public Materia(String codigo, String nombre, String curso, byte cantidadHoras, Modalidad modalidad, Docente docente,
+	public Materia(int codigo, String nombre, String curso, byte cantidadHoras, String modalidad, Docente docente,
 			Carrera carrera) {
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -25,11 +25,11 @@ public class Materia {
 		this.carrera = carrera;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -57,11 +57,11 @@ public class Materia {
 		this.cantidadHoras = cantidadHoras;
 	}
 
-	public Modalidad getModalidad() {
+	public String getModalidad() {
 		return modalidad;
 	}
 
-	public void setModalidad(Modalidad modalidad) {
+	public void setModalidad(String modalidad) {
 		this.modalidad = modalidad;
 	}
 

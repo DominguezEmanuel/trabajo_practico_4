@@ -16,7 +16,7 @@
 				<div class="row mb-5">
 					<h3 data-th-text="${edicion}?'Modificar Carrera':'Nueva Carrera'" class="text-center"></h3>
 				</div>
-				<div>
+				<div class="">
 					<form data-th-action="${edicion}?@{/carrera/modificar} : @{/carrera/guardar}" th:object="${carrera}" method="post">
 						<div class="row mb-3 justify-content-center">
 							<label for="codigo" class="col-sm-12 col-lg-2 col-form-label text-lg-end">Código</label>
@@ -51,7 +51,7 @@
 							</div>
 						</div>
 						
-						<p class="text-center"><input type="submit" class="btn btn-primary" th:value="${edicion}?'Modificar':'Guardar'"></p>
+						<p class="text-center"><input type="submit" class="btn btn-success" th:value="${edicion}?'Modificar':'Guardar'"></p>
 					</form>
 				</div>
 			</div>
