@@ -1,6 +1,5 @@
 package ar.edu.unju.fi.collections;
 
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
