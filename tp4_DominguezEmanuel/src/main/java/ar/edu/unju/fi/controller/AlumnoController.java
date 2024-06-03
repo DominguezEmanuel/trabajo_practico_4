@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unju.fi.collections.CollectionAlumno;
-import ar.edu.unju.fi.collections.CollectionCarrera;
 import ar.edu.unju.fi.model.Alumno;
-import ar.edu.unju.fi.model.Carrera;
 
 import org.springframework.ui.Model;
 
@@ -45,5 +43,28 @@ public class AlumnoController {
 		CollectionAlumno.agregarAlumno(alumno);
 		modelView.addObject("alumnos", CollectionAlumno.getAlumnos());
 		return modelView;
+	}
+	
+	@GetMapping("/modificar/{lu}")
+	public String getModificarAlumnoPage(Model model, @PathVariable(value="lu") String lu) {
+		Alumno alumnoEncontrado = new Alumno();
+		boolean edicion = true;
+		alumnoEncontrado = CollectionAlumno.buscarAlumno(lu);
+		model.addAttribute("edicion", edicion);
+		model.addAttribute("alumno", alumnoEncontrado);
+		model.addAttribute("titulo", "Modificar Alumno");
+		return "alumno";
+	}
+	
+	@PostMapping("/modificar")
+	public String modificarAlumno(@ModelAttribute("alumno") Alumno alumno) {
+		CollectionAlumno.modificarAlumno(alumno);
+		return "redirect:/alumno/listado";
+	}
+	
+	@GetMapping("/eliminar/{lu}")
+	public String eliminarAlumno(@PathVariable(value="lu") String lu) {
+		CollectionAlumno.eliminarAlumno(lu);
+		return "redirect:/alumno/listado";
 	}
 }
