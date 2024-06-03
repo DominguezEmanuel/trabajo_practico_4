@@ -14,30 +14,32 @@
 				<div class="col col-sm-12 fondo-form">
 					<div class="row mb-5">
 						<div class="dgrid gap-2 d-md-flex justify-content-md-end mb-2">
-							<a class="btn btn-primary" data-th-href="@{/carrera/nuevo}" role="button">Agregar Carrera</a>
+							<a class="btn btn-success" data-th-href="@{/carrera/nuevo}" role="button">Agregar Carrera</a>
 						</div>
 						<table class="table table-hover table-striped">
 							<thead>
-							    <tr>
-							      <th scope="col">Código</th>
-							      <th scope="col">Nombre</th>
-							      <th scope="col">Duración</th>
-							      <th scope="col">Estado</th>
-							      <th scope="col">Opciones</th>
+							    <tr class="table-dark">
+							      <th scope="col" class="text-center">Código</th>
+							      <th scope="col" class="text-center">Nombre</th>
+							      <th scope="col" class="text-center">Duración</th>
+							      <th scope="col" class="text-center">Estado</th>
+							      <th scope="col" class="text-center">Opciones</th>
 							    </tr>
 							  </thead>
 							  <tbody>
 							  	<tr data-th-each="car : ${carreras}">
-							  		<td data-th-text="${car.codigo}"></td>
-							  		<td data-th-text="${car.nombre}"></td>
-							  		<td data-th-text="${car.cantidadAnios} +' años '"></td>
-							  		<td>
+							  		<td class="text-center" data-th-text="${car.codigo}"></td>
+							  		<td class="text-center" data-th-text="${car.nombre}"></td>
+							  		<td class="text-center" data-th-text="${car.cantidadAnios} +' años '"></td>
+							  		<td class="text-center">
 							  			<span th:if="${car.estado}">Activa</span>
 							  			<span th:if="${!car.estado}">Inactiva</span>
 							  		</td>
 							  		<td>
-							  			<a class="btn btn-success" data-th-href="@{/carrera/modificar/}+${car.codigo}" role="button">Editar</a>
-							  			<a class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${car.codigo}" role="button">Eliminar</a>
+							  			<div class="text-center">
+							  				<a class="btn btn-warning" data-th-href="@{/carrera/modificar/}+${car.codigo}" role="button">Editar</a>
+							  				<a class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${car.codigo}" role="button">Eliminar</a>
+							  			</div>
 							  		</td>
 							  	</tr>
 							  </tbody>
