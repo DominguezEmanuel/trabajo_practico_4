@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import ar.edu.unju.fi.collections.CollectionCarrera;
+import ar.edu.unju.fi.collections.CollectionDocente;
 import ar.edu.unju.fi.collections.CollectionMateria;
 import ar.edu.unju.fi.model.Materia;
+import ar.edu.unju.fi.model.Docente;
+import ar.edu.unju.fi.model.Carrera;
 
 import org.springframework.ui.Model;
 
@@ -18,6 +22,12 @@ import org.springframework.ui.Model;
 @RequestMapping("/materia")
 public class MateriaController {
 
+	@Autowired
+	private Carrera carrera;
+	
+	@Autowired
+	private Docente docente;
+	
 	@Autowired
 	private Materia materia;
 	
@@ -31,6 +41,8 @@ public class MateriaController {
 	@GetMapping("/nuevo")
 	public String getNuevaMateriaPage(Model model) {
 		Boolean edicion = false;
+		model.addAttribute("carreras", CollectionCarrera.getCarreras());
+		model.addAttribute("docentes", CollectionDocente.getDocentes());
 		model.addAttribute("materia", materia);
 		model.addAttribute("edicion", edicion);
 		model.addAttribute("titulo", "Nueva Materia");
@@ -40,6 +52,10 @@ public class MateriaController {
 	@PostMapping("/guardar")
 	public ModelAndView guardarMateria(@ModelAttribute("materia") Materia materia) {
 		ModelAndView modelView = new ModelAndView("materias");
+		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
+		docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
+		materia.setCarrera(carrera);
+		materia.setDocente(docente);
 		CollectionMateria.agregarMateria(materia);
 		modelView.addObject("materias", CollectionMateria.getMaterias());
 		return modelView;
@@ -53,11 +69,17 @@ public class MateriaController {
 		model.addAttribute("edicion", edicion);
 		model.addAttribute("materia", materiaEncontrada);
 		model.addAttribute("titulo", "Modificar Materia");
+		model.addAttribute("carreras", CollectionCarrera.getCarreras());
+		model.addAttribute("docentes", CollectionDocente.getDocentes());
 		return "materia";
 	}
 	
 	@PostMapping("/modificar")
 	public String modificarMateria(@ModelAttribute("materia") Materia materia) {
+		carrera = CollectionCarrera.buscarCarrera(materia.getCarrera().getCodigo());
+		docente = CollectionDocente.buscarDocente(materia.getDocente().getLegajo());
+		materia.setCarrera(carrera);
+		materia.setDocente(docente);
 		CollectionMateria.modificarMateria(materia);
 		return "redirect:/materia/listado";
 	}
