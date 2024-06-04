@@ -18,11 +18,7 @@ public class CollectionDocente {
 	//Listar Docentes
 	public static List<Docente> getDocentes(){
 		if(docentes.isEmpty()) {
-			//return null;
-			
-			docentes.add(new Docente("LEG-5551", "José Luis", "Zapana", "zapana2018@gmail.com", "388-456123"));
-			docentes.add(new Docente("LEG-4203", "Miguel", "Salazar", "miguels4l4z4ar@gmail.com", "388-423-675"));
-			docentes.add(new Docente("LEG-7894", "Fabiana", "Rodriguez", "fabir0drigu3z@gmail.com", "388-741-514"));
+			return null;
 		}
 		return docentes;
 	}

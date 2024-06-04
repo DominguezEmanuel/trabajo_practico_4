@@ -15,37 +15,37 @@
 				<div>
 					<form data-th-action="${edicion}?@{/materia/modificar} : @{/materia/guardar}" th:object="${materia}" method="post">
 						<div class="row mb-3 justify-content-center">
-							<label for="codigo" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Código</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="codigo" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Código</label>
+							<div class="col-sm-6 col-lg-4">
 								<input type="number" class="form-control" id="codigo" th:field="*{codigo}" th:disabled="${edicion}?true:false">
 								<input type="hidden" class="form-control" id="codigo" th:field="*{codigo}" th:if="${edicion}" required>
 							</div>
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="nombre" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Nombre</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="nombre" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Nombre</label>
+							<div class="col-sm-6 col-lg-4">
 								<input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
 							</div>
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="curso" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Curso</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="curso" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Curso</label>
+							<div class="col-sm-6 col-lg-4">
 								<input type="text" class="form-control" id="curso" th:field="*{curso}" required>
 							</div>
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="horas" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Cantidad de Hs</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="horas" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Cantidad de Hs</label>
+							<div class="col-sm-6 col-lg-4">
 								<input type="number" class="form-control" id="horas" th:field="*{cantidadHoras}" required>
 							</div>
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="mod" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Modalidad</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="mod" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Modalidad</label>
+							<div class="col-sm-6 col-lg-4">
 								<select name="modalidad" id="mod" class="form-select" th:field="*{modalidad}" required>
 									<option th:value="Presencial">Presencial</option>
 									<option th:value="Virtual">Virtual</option>
@@ -54,8 +54,8 @@
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="docente" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Docente</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="docente" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Docente</label>
+							<div class="col-sm-6 col-lg-4">
 								<select id="docente" class="form-select" th:field="*{docente.legajo}">
 									<option data-th-each="d: ${docentes}" th:value="${d.legajo}" data-th-text="${d.nombre}"></option>
 								</select>
@@ -63,8 +63,8 @@
 						</div>
 						
 						<div class="row mb-3 justify-content-center">
-							<label for="carrera" class="col-sm-12 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Carrera</label>
-							<div class="col-sm-12 col-lg-4">
+							<label for="carrera" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Carrera</label>
+							<div class="col-sm-6 col-lg-4">
 								<select id="carrera" class="form-select" th:field="*{carrera.codigo}">
 									<option data-th-each="c: ${carreras}" th:value="${c.codigo}" data-th-text="${c.nombre}"></option>
 								</select>
