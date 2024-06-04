@@ -16,26 +16,29 @@
 						</div>
 						<table class="table table-hover table-striped">
 							<thead>
-							    <tr>
-							      <th scope="col">Código</th>
-							      <th scope="col">Nombre</th>
-							      <th scope="col">Curso</th>
-							      <th scope="col">Horas</th>
-							      <th scope="col">Modalidad</th>
-							      <th scope="col">Docente</th>
-							      <th scope="col">Carrera</th>
+							    <tr class="table-dark">
+							      <th scope="col" class="text-center">Código</th>
+							      <th scope="col" class="text-center">Nombre</th>
+							      <th scope="col" class="text-center">Curso</th>
+							      <th scope="col" class="text-center">Horas</th>
+							      <th scope="col" class="text-center">Modalidad</th>
+							      <th scope="col" class="text-center">Docente</th>
+							      <th scope="col" class="text-center">Carrera</th>
+							      <th scope="col" class="text-center">Opciones</th>
 							    </tr>
 							  </thead>
 							  <tbody>
 							  	<tr data-th-each="mat : ${materias}">
-							  		<td data-th-text="${mat.codigo}"></td>
-							  		<td data-th-text="${mat.nombre}"></td>
-							  		<td data-th-text="${mat.curso}"></td>
-							  		<td data-th-text="${mat.cantidadHoras}+' horas'"></td>
-							  		<td data-th-text="${mat.modalidad}"></td>
+							  		<td class="text-center" data-th-text="${mat.codigo}"></td>
+							  		<td class="text-center" data-th-text="${mat.nombre}"></td>
+							  		<td class="text-center" data-th-text="${mat.curso}"></td>
+							  		<td class="text-center" data-th-text="${mat.cantidadHoras}+' horas'"></td>
+							  		<td class="text-center" data-th-text="${mat.modalidad}"></td>
+							  		<td class="text-center" data-th-text="${mat.docente.nombre}"></td>
+							  		<td class="text-center" data-th-text="${mat.carrera.nombre}"></td>
 							  		<td>
-							  			<a class="btn btn-success" data-th-href="@{/carrera/modificar/}+${car.codigo}" role="button">Editar</a>
-							  			<a class="btn btn-danger" data-th-href="@{/carrera/eliminar/}+${car.codigo}" role="button">Eliminar</a>
+							  			<a class="btn btn-success" data-th-href="@{/materia/modificar/}+${mat.codigo}" role="button">Editar</a>
+							  			<a class="btn btn-danger" data-th-href="@{/materia/eliminar/}+${mat.codigo}" role="button">Eliminar</a>
 							  		</td>
 							  	</tr>
 							  </tbody>

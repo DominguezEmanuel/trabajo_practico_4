@@ -22,9 +22,10 @@ public class CollectionCarrera {
 	
 	public static List<Carrera> getCarreras(){
 		if(carreras.isEmpty()) {
+			//return null;
 			carreras.add(new Carrera(2212, "Contador Público", (byte)5, true));
 			carreras.add(new Carrera(1120, "Licenciatura en Administración", (byte)4, true));
-			carreras.add(new Carrera(1010, "Licenciatura en Economía Política", (byte)4, false));
+			//carreras.add(new Carrera(1010, "Licenciatura en Economía Política", (byte)4, false));
 		}
 		return carreras;
 	}
