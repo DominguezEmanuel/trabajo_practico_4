@@ -32,8 +32,8 @@ public class CollectionCarrera {
 	 * @param carrera
 	 */
 	
-	public static void agregarCarrera(Carrera carrera) {
-		carreras.add(carrera);
+	public static Boolean agregarCarrera(Carrera carrera) {
+		return carreras.add(carrera) ? true : false;
 	}
 	
 	/**
@@ -55,16 +55,22 @@ public class CollectionCarrera {
 	 * @param carrera objeto con los valores de atributos modificados
 	 */
 	
-	public static void modificarCarrera(Carrera carrera) {
-		for(Carrera car : carreras) {
-			if(car.getCodigo() == carrera.getCodigo()) {
-				car.setNombre(carrera.getNombre());
-				car.setCantidadAnios(carrera.getCantidadAnios());
-				car.setEstado(carrera.getEstado());
+	public static void modificarCarrera(Carrera carrera)throws Exception {
+		Boolean encontrado = false;
+		try {
+			for(Carrera car : carreras) {
+				if(car.getCodigo() == carrera.getCodigo()) {
+					car.setNombre(carrera.getNombre());
+					car.setCantidadAnios(carrera.getCantidadAnios());
+					car.setEstado(carrera.getEstado());
+					encontrado = true;
+				}
 			}
-			else {
-				System.out.println("No se encuentra el código de carrera");
-			}
+			if (!encontrado)
+				throw new Exception ("La carrera con codigo " + carrera.getCodigo() + " no existe");
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	
