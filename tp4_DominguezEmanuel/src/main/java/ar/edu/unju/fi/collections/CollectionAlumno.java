@@ -25,8 +25,8 @@ public class CollectionAlumno {
 	}
 	
 	//Agregar Alumno
-	public static void agregarAlumno(Alumno alumno) {
-		alumnos.add(alumno);
+	public static Boolean agregarAlumno(Alumno alumno) {
+		return alumnos.add(alumno) ? true : false;
 	}
 	
 	//Eliminar Alumno
@@ -41,19 +41,26 @@ public class CollectionAlumno {
 	}
 	
 	//Modificar Alumno
-	public static void modificarAlumno(Alumno alumno) {
-		for(Alumno alum : alumnos) {
-			if(alum.getLu().equals(alumno.getLu())) {
-				alum.setDni(alumno.getDni());
-				alum.setNombre(alumno.getNombre());
-				alum.setApellido(alumno.getApellido());
-				alum.setEmail(alumno.getEmail());
-				alum.setTelefono(alumno.getTelefono());
-				alum.setFechaNacimiento(alumno.getFechaNacimiento());
-				alum.setDomicilio(alumno.getDomicilio());
-			}else {
-				System.out.println("No se encontró al alumno");
+	public static void modificarAlumno(Alumno alumno)throws Exception {
+		Boolean encontrado = false;
+		try {
+			for(Alumno alum : alumnos) {
+				if(alum.getLu().equals(alumno.getLu())) {
+					alum.setDni(alumno.getDni());
+					alum.setNombre(alumno.getNombre());
+					alum.setApellido(alumno.getApellido());
+					alum.setEmail(alumno.getEmail());
+					alum.setTelefono(alumno.getTelefono());
+					alum.setFechaNacimiento(alumno.getFechaNacimiento());
+					alum.setDomicilio(alumno.getDomicilio());
+					encontrado = true;
+				}
 			}
+			if (!encontrado)
+				throw new Exception ("El alumno con LU " + alumno.getLu() + " no existe");
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	

@@ -32,7 +32,11 @@
 						<div class="row mb-3 justify-content-center">
 							<label for="curso" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Curso</label>
 							<div class="col-sm-6 col-lg-4">
-								<input type="text" class="form-control" id="curso" th:field="*{curso}" required>
+								<select name="curso" id="curso" class="form-select" th:field="*{curso}" required>
+									<option th:value="Primero">Primero</option>
+									<option th:value="Segundo">Segundo</option>
+									<option th:value="Tercero">Tercero</option>
+								</select>
 							</div>
 						</div>
 						
@@ -46,9 +50,10 @@
 						<div class="row mb-3 justify-content-center">
 							<label for="mod" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Modalidad</label>
 							<div class="col-sm-6 col-lg-4">
-								<select name="modalidad" id="mod" class="form-select" th:field="*{modalidad}" required>
+								<select name="mod" id="mod" class="form-select" th:field="*{modalidad}" required>
 									<option th:value="Presencial">Presencial</option>
 									<option th:value="Virtual">Virtual</option>
+									<option th:value="Mixta">Mixta</option>
 								</select>
 							</div>
 						</div>
