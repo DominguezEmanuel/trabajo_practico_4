@@ -24,8 +24,8 @@ public class CollectionMateria {
 	}
 	
 	//Agregar Materia
-	public static void agregarMateria(Materia materia) {
-		materias.add(materia);
+	public static Boolean agregarMateria(Materia materia) {
+		return materias.add(materia) ? true : false;
 	}
 	
 	//Eliminar Materia
@@ -40,16 +40,25 @@ public class CollectionMateria {
 	}
 	
 	//Modificar Materia
-	public static void modificarMateria(Materia materia) {
-		for(Materia mat : materias) {
-			if(mat.getCodigo() == materia.getCodigo()) {
-				mat.setNombre(materia.getNombre());
-				mat.setCurso(materia.getCurso());
-				mat.setCantidadHoras(materia.getCantidadHoras());
-				mat.setModalidad(materia.getModalidad());
-				mat.setDocente(materia.getDocente());
-				mat.setCarrera(materia.getCarrera());
+	public static void modificarMateria(Materia materia)throws Exception {
+		Boolean encontrado = false;
+		try {
+			for(Materia mat : materias) {
+				if(mat.getCodigo() == materia.getCodigo()) {
+					mat.setNombre(materia.getNombre());
+					mat.setCurso(materia.getCurso());
+					mat.setCantidadHoras(materia.getCantidadHoras());
+					mat.setModalidad(materia.getModalidad());
+					mat.setDocente(materia.getDocente());
+					mat.setCarrera(materia.getCarrera());
+					encontrado = true;
+				}
 			}
+			if (!encontrado)
+				throw new Exception ("La materia con codigo " + materia.getCodigo() + " no existe");
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	

@@ -36,6 +36,8 @@
 									<option th:value="Primero">Primero</option>
 									<option th:value="Segundo">Segundo</option>
 									<option th:value="Tercero">Tercero</option>
+									<option th:value="Cuarto">Cuarto</option>
+									<option th:value="Quinto">Quinto</option>
 								</select>
 							</div>
 						</div>
@@ -62,7 +64,7 @@
 							<label for="docente" class="col-sm-6 col-lg-2 col-form-label text-lg-end bg-warning text-dark rounded-pill">Docente</label>
 							<div class="col-sm-6 col-lg-4">
 								<select id="docente" class="form-select" th:field="*{docente.legajo}">
-									<option data-th-each="d: ${docentes}" th:value="${d.legajo}" data-th-text="${d.nombre}"></option>
+									<option data-th-each="d: ${docentes}" th:value="${d.legajo}" data-th-text="${d.nombre + ' ' + d.apellido}"></option>
 								</select>
 							</div>
 						</div>

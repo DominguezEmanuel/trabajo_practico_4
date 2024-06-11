@@ -24,8 +24,8 @@ public class CollectionDocente {
 	}
 	
 	//Agregar Docente
-	public static void agregarDocente(Docente docente) {
-		docentes.add(docente);
+	public static Boolean agregarDocente(Docente docente) {
+		return docentes.add(docente) ? true : false;
 	}
 	
 	//Eliminar Docente
@@ -40,17 +40,24 @@ public class CollectionDocente {
 	}
 	
 	//Modificar Docente
-	public static void modificarDocente(Docente docente) {
-		for(Docente doc : docentes) {
-			if(doc.getLegajo().equals(docente.getLegajo())) {
-				doc.setLegajo(docente.getLegajo());
-				doc.setNombre(docente.getNombre());
-				doc.setApellido(docente.getApellido());
-				doc.setEmail(docente.getEmail());
-				doc.setTelefono(docente.getTelefono());
-			}else {
-				System.out.println("No se encontró al alumno");
+	public static void modificarDocente(Docente docente)throws Exception {
+		Boolean encontrado = false;
+		try {
+			for(Docente doc : docentes) {
+				if(doc.getLegajo().equals(docente.getLegajo())) {
+					doc.setLegajo(docente.getLegajo());
+					doc.setNombre(docente.getNombre());
+					doc.setApellido(docente.getApellido());
+					doc.setEmail(docente.getEmail());
+					doc.setTelefono(docente.getTelefono());
+					encontrado = true;
+				}
 			}
+			if (!encontrado)
+				throw new Exception ("El docente con legajo " + docente.getLegajo() + " no existe");
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 	}
 	
